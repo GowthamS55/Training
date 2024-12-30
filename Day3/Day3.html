@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container" >
+        <center><h1 style="color: #ffffff;"> Employee Task Tracker </h1></center>
+    </div>
+    <div class="one">    
+    <span >Employee Name</span><br><br>
+    <input type="text" placeholder="Employee Name" id="employeeName" name="employeeName" required  style="width: 300px; height: 30px;"/><br><br>
+    <span >TaskTitle:</span><br><br>
+    <input type="text" id="TaskTitle " name="TaskTitle " required style="width: 300px; height: 30px;" ><br><br>
+    <span>TaskDescription:</span><br><br>
+    <textarea name="TaskDescription" id="TaskDescription" style="width: 300px; height: 30px;"></textarea><br><br>
+    <span>DueDate:</span><br><br>
+    <input type="date" name="DueDate" id="DueDate" style="width: 300px; height: 30px;"><br><br>
+    <button id="button" style="width: 150px; height: 40px; ">Assign Task</button>
+</div>
+<h1><center>TASK TABLE</center></h1>
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2"><center>Employee Name</center></th>
+            <th colspan="2"><center>Task Details</center></th>
+            <th rowspan="2"><center>Due Date</center></th>
+        </tr>
+        <tr>
+            <th><center>Task Title</center></th>
+            <th><center>Task Description</center></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="work">
+            <td rowspan="3">Gowtham S</td>
+            <td>Eating</td>
+            <td>Done </td>
+            <td>2024-12-26</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr class="work">
+            <td rowspan="3">Gowtham S</td>
+            <td>Eating</td>
+            <td>Done </td>
+            <td>2024-12-26</td>
+        </tr>
+    </tbody>
+
+</table>
+    
+    <style>
+        .container {
+            background-color: #000000;
+            padding: 20px;
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+        }
+        .one{
+            padding-top: 3%;
+            padding-bottom: 3%;
+            padding: auto;
+            font-size: x-large;
+            text-align: center;
+        }
+        #button{
+            background-color:#000000;
+            color: #ffffff;
+        }
+
+        table{
+            width: 100%;
+            color:#ffffff;
+            border-collapse: collapse;
+            background-color: #000000;
+        }
+        th, td {
+            border: 1px solid rgb(255, 255, 255);
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+
+
+</body>
+</html>
