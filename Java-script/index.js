@@ -1,13 +1,19 @@
-// const arr = [
-//   { name: "Gowtham", age: 12, place: "anthiyur", dep: "EEE", isMale: true },
-// ];
-
-// arr[0]
+const arr = [
+  { name: "Gowtham", age: 12, place: "anthiyur", dep: "EEE", isMale: true },
+];
+for (let i = 0; i < arr.length; i++)  {
+    arr[i].name = "kavin";
+    arr[i].place = "erode";
+  }
+console.log(arr);
+// arr[0].name="kavin";
+// arr[0].place="erode";
+// console.log(arr);
 
 
 (1)
 function checkEvenOdd(num) {
-  console.log(num + (num % 2 === 0 ? " is Even" : " is Odd"));
+  console.log(num + (num % 2 == 0 ? " is Even" : " is Odd"));
 }
 checkEvenOdd(4);
 checkEvenOdd(5);
@@ -35,7 +41,8 @@ Tables(inputNumber);
 
 function isPrime(num) {
   for(let i = 2; i <= Math.sqrt(num); i++) {
-    if(num % i === 0) return false;
+    if(num % i === 0) 
+      return false;
   }
   return true;
  }
