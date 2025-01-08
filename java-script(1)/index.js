@@ -5,6 +5,8 @@ function basicMathOperations(num1, num2) {
   let product = num1 * num2;
   let quotient = num1 / num2;
 
+  
+
   console.log(sum);
   console.log(difference);
   console.log(product);
@@ -202,7 +204,11 @@ for (let i = 0; i < hey.length; i++) {
     }
 }
 
+<<<<<<< HEAD
 console.log(count); 
+=======
+console.log(count);  
+>>>>>>> 91773f5c30e3f2b98cad6025a6eff85f3c6777d6
 
 
 
