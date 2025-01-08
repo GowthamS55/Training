@@ -16,7 +16,7 @@ basicMathOperations(5, 3);
 (2)
 
 function checkNumber(num) {
-    if (num > 10 && num % 2 === 0) {
+    if (num > 10 && num % 2 == 0) {
         console.log(" Number is greater than 10 and divisible by 2");
     } else {
         console.log("Not Satify");
@@ -34,7 +34,7 @@ console.log(number < 0 ? "Negative" : "Positive");
 (4)
 
 function checkNumberBrute(num) {
-    if (num % 2 === 0) {
+    if (num % 2 == 0) {
         return "Even";
     } else {
         return "Odd";
@@ -148,7 +148,6 @@ function checkPalindrome(str) {
     str = str.toLowerCase();
     let start = 0;
     let end = str.length - 1;
-
     while (start < end) {
         if (str[start] !== str[end]) {
             console.log("false");
@@ -202,7 +201,7 @@ for (let i = 0; i < hey.length; i++) {
     }
 }
 
-console.log(count);  // Output: 2
+console.log(count); 
 
 
 
