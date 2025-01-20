@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Task</title>
+    <title>Employee Data Tables</title>
 </head>
 <body>
-    <h1>Information Table</h1>
-    <table>
+    <h1>Employee Information</h1>
+    <table class="employee-table">
         <thead>
-            <tr id="head">
+            <tr id="employee-header">
             </tr>
         </thead>
-        <tbody id="body">
+        <tbody id="employee-data">
         </tbody>
     </table>
-    <table>
+    <table class="task-table">
         <thead>
             <tr>
                 <th>Name</th>
@@ -23,10 +23,10 @@
                 <th>Status</th>
             </tr>
         </thead>
-        <tbody id="taskTable"></tbody>
+        <tbody id="task-data"></tbody>
     </table>
     <style>
-        table {
+        .employee-table, .task-table {
             border-collapse: collapse;
             margin: 20px 0;
             font-size: 18px;
@@ -54,67 +54,64 @@
             { id: 10, name: "Noah", age: 26, department: "Logistics" },
         ];
 
-        const tHead = document.getElementById('head');
-        const tbody = document.getElementById('body');
+        const employeeHeader = document.getElementById('employee-header');
+        const employeeData = document.getElementById('employee-data');
         
-        const key=Object.keys(employees[0]);
-        console.log(key);
-        for(let i=0;i<key.length;i++){
-            const th=document.createElement('th');
-            th.textContent=key[i].toUpperCase();
-            tHead.appendChild(th);
-        } 
+        const employeeKeys = Object.keys(employees[0]);
+        console.log(employeeKeys);
 
-        for(let i=0;i<employees.length;i++){
-            const row=document.createElement('tr');
-            const value=Object.values(employees[i]);
-            for (let j=0;j<value.length;j++){
-                const data=document.createElement('td');
-                data.textContent=value[j];
-                row.appendChild(data);
-            }
-            tbody.appendChild(row);
-        }
-
-// task 2 
-
-
-
-
-
-        const data = [
-        { 
-            id: 1, 
-            name: "John", 
-            tasks: [ 
-                { taskId: 101, description: "Complete report", status: "Pending" }, 
-                { taskId: 102, description: "Review code", status: "Completed" }
-            ]
-        },
-        { 
-            id: 2, 
-            name: "Jane", 
-            tasks: [ 
-                { taskId: 103, description: "Prepare slides", status: "In Progress" }, 
-                { taskId: 104, description: "Team meeting", status: "Pending" }
-            ]
-        }
-    ];
-
-    const taskTable = document.getElementById('taskTable');
-
-    data.forEach(person => {
-        person.tasks.forEach(task => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${person.name}</td>
-                <td>${task.description}</td>
-                <td>${task.status}</td>
-            `;
-            taskTable.appendChild(row);
+        employeeKeys.forEach(key => {
+            const headerCell = document.createElement('th');
+            headerCell.textContent = key.toUpperCase();
+            headerCell.className = 'employee-header-cell';
+            employeeHeader.appendChild(headerCell);
         });
-    });
 
+        employees.forEach(employee => {
+            const row = document.createElement('tr');
+            row.className = 'employee-row';
+            const values = Object.values(employee);
+            values.forEach(value => {
+                const cell = document.createElement('td');
+                cell.textContent = value;
+                cell.className = 'employee-cell';
+                row.appendChild(cell);
+            });
+            employeeData.appendChild(row);
+        });
+
+        const taskData = [
+            { 
+                id: 1, 
+                name: "John", 
+                tasks: [ 
+                    { taskId: 101, description: "Complete report", status: "Pending" }, 
+                    { taskId: 102, description: "Review code", status: "Completed" }
+                ]
+            },
+            { 
+                id: 2, 
+                name: "Jane", 
+                tasks: [ 
+                    { taskId: 103, description: "Prepare slides", status: "In Progress" }, 
+                    { taskId: 104, description: "Team meeting", status: "Pending" }
+                ]
+            }
+        ];
+
+        const taskTableBody = document.getElementById('task-data');
+        taskData.forEach(person => {
+            person.tasks.forEach(task => {
+                const row = document.createElement('tr');
+                row.className = 'task-row';
+                row.innerHTML = `
+                    <td class="task-cell">${person.name}</td>
+                    <td class="task-cell">${task.description}</td>
+                    <td class="task-cell">${task.status}</td>
+                `;
+                taskTableBody.appendChild(row);
+            });
+        });
     </script>
 </body>
 </html>
