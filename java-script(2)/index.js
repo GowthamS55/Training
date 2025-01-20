@@ -26,6 +26,8 @@ function replacename(str){
 }
 replacename('John Mary John Alex Mary');
 
+
+
 (3)
 
 function replaceword(str){
@@ -33,6 +35,7 @@ function replaceword(str){
     return word.map((word,index) => index % 2 == 0 ? "EVEN" : word).join(" ");
 }
 console.log(replaceword("Gowtham gowtham goe goetham"));
+
 
 (4)
 function removeDuplicates(str) {
