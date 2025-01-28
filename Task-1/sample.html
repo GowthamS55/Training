@@ -1,0 +1,129 @@
+<!--<!DOCTYPE html> -->
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form to Table</title>
+</head>
+<body>
+    <h2>Add Values to Table</h2>
+    <form id="dataForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="age">Age:</label>
+        <input type="number" id="age" required>
+        <button type="button" id="addButton">Add to Table</button>
+    </form>
+    <br>
+    <table border="1" id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody> -->
+            <!-- Rows will be added here
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('addButton').addEventListener('click', function () {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+
+            if (name && age) {
+                const table = document.getElementById('dataTable').querySelector('tbody');
+                const newRow = table.insertRow();
+
+                const nameCell = newRow.insertCell(0);
+                const ageCell = newRow.insertCell(1);
+
+                nameCell.textContent = name;
+                ageCell.textContent = age;
+
+                // Clear input fields
+                document.getElementById('name').value = '';
+                document.getElementById('age').value = '';
+            } else {
+                alert("Please fill in both fields.");
+            }
+        });
+    </script>
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <h2>Add Values to Table with Validation</h2>
+    <form id="dataForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Enter your age">
+        <br><br>
+        <button type="button" id="addButton">Add to Table</button>
+        <p id="error" style="color: red;"></p>
+    </form>
+    <br>
+    <table border="1" id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be added here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Function to validate the form fields
+        function validateFields(name, age) {
+            const errorElement = document.getElementById('error');
+            errorElement.textContent = ''; // Clear previous error messages
+
+            if (!name) {
+                errorElement.textContent = "Name cannot be empty.";
+                return false;
+            }
+            if (!age || isNaN(age) || age <= 0) {
+                errorElement.textContent = "Age must be a positive number.";
+                return false;
+            }
+            return true;
+        }
+
+        document.getElementById('addButton').addEventListener('click', function () {
+            const name = document.getElementById('name').value.trim();
+            const age = document.getElementById('age').value.trim();
+
+            // Validate the fields
+            if (validateFields(name, age)) {
+                const table = document.getElementById('dataTable').querySelector('tbody');
+                const newRow = table.insertRow();
+
+                const nameCell = newRow.insertCell(0);
+                const ageCell = newRow.insertCell(1);
+
+                nameCell.textContent = name;
+                ageCell.textContent = age;
+
+                // Clear input fields
+                document.getElementById('name').value = '';
+                document.getElementById('age').value = '';
+                document.getElementById('error').textContent = ''; // Clear error message
+            }
+        });
+    </script>
+</body>
+</html>

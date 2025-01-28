@@ -1,0 +1,218 @@
+ @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* {
+    font-family: "Bebas Neue", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1d1d1d;
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 900px;;
+    height: 900px;
+    background-color: black;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.Amount {
+    background-color: white;
+    padding: 20px;
+    width: 600px;
+    /* flex: 1; */
+}
+
+.Amount h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.Amount h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.Amount h3 {
+    color: #7f8c8d;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.BalanceCheck {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-left: 64px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.BalanceCheck p {
+    padding: 40px;
+    padding-right: 60px;
+    padding-left: 60px;
+    font-size: 18px;
+}
+
+.BalanceCheck div.Curr-bal {
+    color: green;
+    border: 3px solid;
+    border-radius: 5px;
+}
+
+.BalanceCheck div.Exp-bal {
+    color: red;
+    border: 3px solid;
+    border-radius: 5px;
+}
+
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.form-control input,
+.form-control select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+.form-control input:focus,
+.form-control select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.category-filter {
+    margin: 20px 0;
+}
+
+.category-filter select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#Add-Tra {
+    background-color: #2ecc71;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#Add-Tra:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-filter {
+    margin: 20px 0;
+    width: 50%;
+    padding: 30px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-buttons button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+
+
+.History {
+    flex: 1;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.History h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.Amount-Exp li{
+    display: flex;
+}
+
+
+.transaction-info {
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+} 
+.transaction-details {
+    display: flex;
+    gap: 18px;
+}
+
+
+
+
+
+

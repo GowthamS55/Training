@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Manager</title>
+</head>
+<body>
+  <h1>Event Manager</h1>
+  <form id="eventForm">
+    <label for="eventTitle">Event Title:</label>
+    <input type="text" id="eventTitle" required />
+    <label for="eventDate">Event Date:</label>
+    <input type="date" id="eventDate" required />
+    <button type="submit">Add Event</button>
+  </form>
+
+  <h3>Filters</h3>
+  <button id="showAll">Show All</button>
+  <button id="showUpcoming">Upcoming Events</button>
+  <button id="showPast">Past Events</button>
+
+  <h3>Event List</h3>
+  <ul id="eventList"></ul>
+
+  <script>
+    const events = [];
+    const eventForm = document.getElementById('eventForm');
+    const eventList = document.getElementById('eventList');
+    const showAll = document.getElementById('showAll');
+    const showUpcoming = document.getElementById('showUpcoming');
+    const showPast = document.getElementById('showPast');
+
+    const getCurrentDate = () => new Date().toISOString().split('T')[0];
+
+    const getEventStatus = (date) => (date >= getCurrentDate() ? 'Upcoming' : 'Past');
+
+    const renderEvents = (filter = null) => {
+      eventList.innerHTML = ''; 
+      const filteredEvents = filter
+        ? events.filter((event) => event.status === filter)
+        : events;
+
+      filteredEvents.forEach((event, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${event.title} - ${event.date} (${event.status})`;
+
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.onclick = () => editEvent(index);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = () => deleteEvent(index);
+
+        li.appendChild(editButton);
+        li.appendChild(deleteButton);
+
+        eventList.appendChild(li);
+      });
+    };
+
+    eventForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('eventTitle').value;
+      const date = document.getElementById('eventDate').value;
+
+      events.push({ title, date, status: getEventStatus(date) });
+      renderEvents();
+
+      eventForm.reset();
+    });
+
+    const editEvent = (index) => {
+      const newTitle = prompt('Enter new title:', events[index].title);
+      const newDate = prompt('Enter new date (YYYY-MM-DD):', events[index].date);
+
+      if (newTitle && newDate) {
+        events[index].title = newTitle;
+        events[index].date = newDate;
+        events[index].status = getEventStatus(newDate);
+        renderEvents();
+      }
+    };
+
+    const deleteEvent = (index) => {
+      events.splice(index, 1);
+      renderEvents();
+    };
+
+    showAll.addEventListener('click', () => renderEvents());
+    showUpcoming.addEventListener('click', () => renderEvents('Upcoming'));
+    showPast.addEventListener('click', () => renderEvents('Past'));
+
+    renderEvents();
+  </script>
+</body>
+</html>

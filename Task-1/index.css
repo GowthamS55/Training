@@ -77,3 +77,32 @@ button:hover {
 th {
   padding: 20px;
 }
+.update-btn {
+  background-color: #4CAF50; 
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  opacity: 0.8;
+}
+.error-message {
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.hide {
+  display: none;
+}

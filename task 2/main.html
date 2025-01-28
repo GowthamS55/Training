@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Car Rental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4" style="background-color: black;color: white;padding: 20px;">Available Cars</h1>
+        <div class="row" id="carCards">
+        </div>
+    </div>
+
+    <script>
+        const cars = [
+            { 
+                id: 1, 
+                model: 'Toyota Camry', 
+                pricePerDay: 50, 
+                description: 'Comfortable midsize sedan',
+                image: './th (2).jpg'
+            },
+            { 
+                id: 2, 
+                model: 'Honda Civic', 
+                pricePerDay: 45, 
+                description: 'Compact and fuel-efficient',
+                image:'./th (2).jpg'
+            },
+            { 
+                id: 3, 
+                model: 'Ford Mustang', 
+                pricePerDay: 75, 
+                description: 'Sporty convertible',
+                image:'./th (2).jpg'
+            },
+            { 
+                id: 4, 
+                model: 'Tesla Model 3', 
+                pricePerDay: 80, 
+                description: 'Electric performance sedan',
+                image:'./th (2).jpg'
+            },
+            { 
+                id: 5, 
+                model: 'BMW 3 Series', 
+                pricePerDay: 85, 
+                description: 'Luxury sports sedan',
+                image:'./th (2).jpg'
+            },
+            { 
+                id: 6, 
+                model: 'Mercedes-Benz C-Class', 
+                pricePerDay: 90, 
+                description: 'Premium compact luxury',
+                image:'./th (2).jpg'
+            },
+            { 
+                id: 7, 
+                model: 'Jeep Wrangler', 
+                pricePerDay: 70, 
+                description: 'Off-road adventure SUV',
+                image:'./th (2).jpg'
+            },
+            { 
+                id: 8, 
+                model: 'Mazda CX-5', 
+                pricePerDay: 55, 
+                description: 'Compact crossover SUV',
+                image:'./th (2).jpg'
+            },
+          
+        ];
+
+        function renderCarCards() {
+            const carCardsContainer = document.getElementById('carCards');
+                cars.forEach(car => {
+                const cardHTML = `
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="${car.image}" class="card-img-top" alt="${car.model}" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">${car.model}</h5>
+                                <p class="card-text">${car.description}</p>
+                                <p class="card-text fw-bold">$${car.pricePerDay}/day</p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button class="btn btn-primary" onclick="bookCar(${car.id})">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                carCardsContainer.innerHTML += cardHTML;
+            });
+
+        }
+        function bookCar(carId) {
+            const selectedCar = cars.find(car => car.id === carId);
+            window.location.href = 'index.html';
+        }
+        document.addEventListener('DOMContentLoaded', renderCarCards);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
