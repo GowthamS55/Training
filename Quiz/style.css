@@ -7,9 +7,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.app {
+  }
+  
+  .app {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -17,28 +17,28 @@ body {
     width: 100%;
     max-width: 500px;
     text-align: center;
-}
-
-h1 {
+  }
+  
+  h1 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
-}
-
-.quiz h2 {
+  }
+  
+  .quiz h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #444;
-}
-
-#answer-btn {
+  }
+  
+  #answer-buttons {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
-}
-
-#answer-btn .btn {
+  }
+  
+  #answer-buttons .btn {
     padding: 10px 15px;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -46,19 +46,19 @@ h1 {
     background-color: #f0f0f0;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-}
-
-#answer-btn .btn:hover {
+  }
+  
+  #answer-buttons .btn:hover {
     background-color: #007bff;
     color: #fff;
     transform: scale(1.05);
-}
-
-#answer-btn .btn:active {
+  }
+  
+  #answer-buttons .btn:active {
     transform: scale(1);
-}
-
-#next-btn {
+  }
+  
+  #next-btn {
     padding: 10px 15px;
     font-size: 1rem;
     border: none;
@@ -67,12 +67,12 @@ h1 {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-}
-
-#next-btn:hover {
+  }
+  
+  #next-btn:hover {
     background-color: #218838;
-}
-
-#next-btn:active {
+  }
+  
+  #next-btn:active {
     transform: scale(0.95);
-}
+  }
