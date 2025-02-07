@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Navbar from "./component/Navbar";
 // import { useNavigate } from "react-router-dom";
 import { ProductContext } from "../App";
-import './Detail.css'
+import "./Detail.css";
 
 const Detail = () => {
   const { products, id, cardData, setCarddata } = useContext(ProductContext);
@@ -24,12 +24,14 @@ const Detail = () => {
       <Navbar />
       <h1>Product Details</h1>
       {selectedProduct && (
-  <div className="product-details">
-    <h2>{selectedProduct.title}</h2>
-    <img src={selectedProduct.image} alt={selectedProduct.title} />
-<bold>    <p className="price">Price: ${selectedProduct.price}</p></bold>
-    <p>{selectedProduct.description}</p>
-  
+        <div className="product-details">
+          <h2>{selectedProduct.title}</h2>
+          <img src={selectedProduct.image} alt={selectedProduct.title} />
+          <bold>
+            {" "}
+            <p className="price">Price: ${selectedProduct.price}</p>
+          </bold>
+          <p>{selectedProduct.description}</p>
 
           <button
             type="button"
