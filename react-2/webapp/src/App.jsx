@@ -10,7 +10,6 @@ export const ProductContext = createContext();
 function App() {
   const [products, setProducts] = useState([]);
   const [id, setId] = useState(null);
-
   const [carddata, setCarddata] = useState([]);
 
   useEffect(() => {
